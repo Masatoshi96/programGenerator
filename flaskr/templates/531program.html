@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>531プログラム</title>
+    </head>
+
+    <script type="text/javascript">
+        function Calculate(repMax)
+        {
+            wk1_set1 = Math.round(repMax * 0.65);
+            wk1_set2 = Math.round(repMax * 0.75);
+            wk1_set3 = Math.round(repMax * 0.85);
+            wk2_set1 = Math.round(repMax * 0.70);
+            wk2_set2 = Math.round(repMax * 0.80);
+            wk2_set3 = Math.round(repMax * 0.90);
+            wk3_set1 = Math.round(repMax * 0.75);
+            wk3_set2 = Math.round(repMax * 0.85);
+            wk3_set3 = Math.round(repMax * 0.95);
+            wk4_set1 = Math.round(repMax * 0.40);
+            wk4_set2 = Math.round(repMax * 0.50);
+            wk4_set3 = Math.round(repMax * 0.60);
+
+            document.form531.wk1_set1.value = wk1_set1;
+            document.form531.wk1_set2.value = wk1_set2;
+            document.form531.wk1_set3.value = wk1_set3;
+            document.form531.wk2_set1.value = wk2_set1;
+            document.form531.wk2_set2.value = wk2_set2;
+            document.form531.wk2_set3.value = wk2_set3;
+            document.form531.wk3_set1.value = wk3_set1;
+            document.form531.wk3_set2.value = wk3_set2;
+            document.form531.wk3_set3.value = wk3_set3;
+            document.form531.wk4_set1.value = wk4_set1;
+            document.form531.wk4_set2.value = wk4_set2;
+            document.form531.wk4_set3.value = wk4_set3;
+        }
+    </script>
+
+    <body>
+        <h1>531プログラム</h1>
+        <form method="post" name="form531">
+            <input type="text" name="repMax">
+            <br>
+            <input type="button" onClick="Calculate(repMax.value)" value="計算">
+            <br>
+            <br>
+            <table border="1">
+                <tr>
+                    <th>week1</th>
+                    <th>week2</th>
+                    <th>week3</th>
+                    <th>week4</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="wk1_set1" value="1rm*65%">kg×5</td>
+                    <td><input type="text" name="wk2_set1" value="1rm*70%">kg×3</td>
+                    <td><input type="text" name="wk3_set1" value="1rm*75%">kg×5</td>
+                    <td><input type="text" name="wk4_set1" value="1rm*40%">kg×5</td>
+                </tr> 
+                <tr>
+                    <td><input type="text" name="wk1_set2" value="1rm*75%">kg×5</td>
+                    <td><input type="text" name="wk2_set2" value="1rm*80%">kg×3</td>
+                    <td><input type="text" name="wk3_set2" value="1rm*85%">kg×3</td>
+                    <td><input type="text" name="wk4_set2" value="1rm*50%">kg×5</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="wk1_set3" value="1rm*75%">kg×5+</td>
+                    <td><input type="text" name="wk2_set3" value="1rm*80%">kg×3+</td>
+                    <td><input type="text" name="wk3_set3" value="1rm*95%">kg×1+</td>
+                    <td><input type="text" name="wk4_set3" value="1rm*60%">kg×5</td>
+                </tr>
+            </table>
+        </form>
+        <a href="{{ url_for('index') }}">top</a>
+    </body>
+</html>
